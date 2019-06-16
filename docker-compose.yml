@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      target: dev
+    env_file:
+      - .env.dev
+    stdin_open: true
+    tty: true
+    command: ./bin/start_dev_server
+    volumes:
+      - ".:/APP_NAME"
+      - bundle:/bundle
+    ports:
+      - "3000:3000"
+ # Uncomment this in case of db definition
+ # Add any other dependencies
+    # depends_on:
+      # - db
+
+ # For mariadb databases
+ # Make sure to select the correct database version
+  # db:
+  #   image: "mariadb:10.3"
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: db_password
+
+# For Postgres database
+# Make sure to select the correct database version
+  # db:
+  #   image: "healthcheck/postgres:alpine"
+  #   environment:
+  #     POSTGRES_PASSWORD: db_password
+volumes:
+  bundle:

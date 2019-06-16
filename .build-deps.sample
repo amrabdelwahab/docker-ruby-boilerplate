@@ -1,0 +1,11 @@
+# For most projects you need:
+build-base
+
+# For ruby projects with mysql2 gem add:
+mysql-dev
+
+# For ruby projects with pg gem add:
+postgresql-dev
+
+# Make sure to add any needed native library to make your bundle
+# installation works

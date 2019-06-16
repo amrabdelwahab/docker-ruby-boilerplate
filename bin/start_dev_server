@@ -1,0 +1,7 @@
+#!/bin/ash
+
+# In this file you need to add the commands needed to start your dev server
+
+# For Rails projects, you can use the following:
+rm -f tmp/pids/server.pid
+bundle exec rails server --binding 0.0.0.0

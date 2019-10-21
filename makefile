@@ -12,7 +12,7 @@ usage:
 	@echo "  * up           		  - Runs the development server"
 	@echo "  * tear-down    		  - Removes all the containers and tears down the setup"
 	@echo "  * stop         		  - Stops the server"
-	@echo "  * test         		  - Runs rspec"
+	@echo "  * rspec         		  - Runs rspec"
 
 # Without db
 setup: build bundle
@@ -26,7 +26,7 @@ bundle:
 	$(call dc-run, bundle install)
 dev:
 	$(call dc-run, ash)
-run:
+up:
 	$(call dc, up)
 tear-down:
 	$(call dc, down)
@@ -44,6 +44,8 @@ stop:
 # 	$(call dc-run, bundle exec rake db:migrate)
 # db-test-migrate:
 # 	$(call dc-run, bundle exec rake db:migrate RAILS_ENV=test)
+# rspec:
+# 	$(call dc-run, bundle exec rspec)
 
 
 # .PHONY: test
